@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twiine'sites</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <p class="reg">TWIINE ENOCK 23/BSE/BU/R/0003</p>
+    </header>
+    <main>
+        <section class="one">
+            <div class="image">
+                <div class="image-div" id="image">
+                    <img src="./images/WhatsApp Image 2023-11-30 at 2.38.05 PM.jpeg" alt="">
+                </div>
+                <button class="nextButton" id="nextButton">Next image</button>
+                <button class="previousButton" id="previousButton">previous image</button>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>TWIINE ENOCK</li>
+                    <li>23/BSE/BU/R/0003</li>
+                    <li>23SEM/BU/Exam2174</li>
+                    <li>twiineenockfox@gmail.com</li>
+                    <li>+256 77125 0497</li>
+                </ul>
+            </div>
+        </section>
+        <section class="two">
+            <div class="person">
+                <p>personal wesite</p>
+                <a href="https://twiineenock.github.io/personal-website/">view on github ||</a>
+                <a href="https://superb-crisp-93f93e.netlify.app">netlify</a>
+            </div>
+            
+            <div class="organ">
+                <p>oragnisational website</p>
+                <a href="https://twiineenock.github.io/organisation/">view on github ||</a>
+                <a href="https://tiny-basbousa-9fc426.netlify.app">netlify</a>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p class="reg">Designed by TWIINE ENOCK</p>
+    </footer>
+
+    <script>
+        const images = [
+            "./images/WhatsApp Image 2023-11-30 at 2.37.58 PM.jpeg",
+            "./images/WhatsApp Image 2023-11-30 at 2.38.05 PM.jpeg",
+            "./images/WhatsApp Image 2023-11-30 at 2.38.06 PM.jpeg",
+        ];
+
+        let currentImageIndex = 0;
+
+        const imageElement = document.getElementById("image");
+        const previousButton = document.getElementById("previousButton");
+        const nextButton = document.getElementById("nextButton");
+
+        previousButton.addEventListener("click", function() {
+            if (currentImageIndex === 0) {
+                currentImageIndex = images.length - 1;
+            } else {
+                currentImageIndex--;
+            }
+
+            updateImage();
+        });
+
+        nextButton.addEventListener("click", function() {
+            if (currentImageIndex === images.length - 1) {
+                currentImageIndex = 0;
+            } else {
+                currentImageIndex++;
+            }
+
+            updateImage();
+        });
+
+        /* function updateImage() {
+            imageElement.src = images[currentImageIndex];
+        } */
+
+        function updateImage() {
+    if (currentImageIndex === images.length - 1) {
+        currentImageIndex = 0;
+    } else {
+        currentImageIndex++;
+    }
+
+    imageElement.src = images[currentImageIndex];
+}
+    </script>
+
+</body>
+</html>
